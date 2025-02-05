@@ -3,13 +3,16 @@
 int main() {
     float x, y;
 
-    // Improved scanf: Allow for spaces around the comma
-    scanf("%f , %f", &x, &y); // Note the spaces around the comma
+    printf("Enter two numbers separated by a comma (and optionally spaces): "); // Prompt the user
+
+    // Allow spaces AND handle potential errors
+    if (scanf("%f, %f", &x, &y)!= 2) { // Check if scanf read two values
+        printf("Invalid input. Please enter two numbers separated by a comma.\n");
+        return 1; // Indicate an error
+    }
 
     float c = x * y;
-
-    // Correct printf: Use the calculated value 'c'
-    printf("Product: %.2f\n", c); // Added a newline for cleaner output
+    printf("Product: %.2f\n", c);
 
     return 0;
 }
