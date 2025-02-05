@@ -3,7 +3,7 @@
 int main() {
     float x, y;
 
-    printf("Enter two numbers separated by a comma (and optionally spaces): "); // Prompt the user
+// Prompt the user
 
     // Allow spaces AND handle potential errors
     if (scanf("%f, %f", &x, &y)!= 2) { // Check if scanf read two values
