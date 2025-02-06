@@ -2,8 +2,8 @@
 #include <stdbool.h>
 
 int main() {
-    unsigned int x, y;
-    scanf("%c %c", &x, &y);
+    long x, y;
+    scanf("%ld %ld", &x, &y);
 
     bool z = x && y;
 
