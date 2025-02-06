@@ -1,8 +1,13 @@
 #include <stdio.h>
-int main (){
-    int x,y ;
-    scanf("%d %d",&x,&y);
-    int z = x>y;
-    printf("%d",z);
+#include <stdbool.h>
+
+int main() {
+    int x, y;
+    scanf("%d %d", &x, &y);
+
+    bool z = x > y;
+
+    printf("%s\n", z ? "True" : "false"); 
+
     return 0;
 }
