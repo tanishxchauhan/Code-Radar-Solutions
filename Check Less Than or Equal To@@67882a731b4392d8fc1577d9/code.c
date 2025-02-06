@@ -5,7 +5,7 @@ int main() {
     int x, y;
     scanf("%d %d", &x, &y);
 
-    bool z = x =< y;
+    bool z = x <= y;
 
     printf("%s\n", z ? "True" : "False"); 
 
