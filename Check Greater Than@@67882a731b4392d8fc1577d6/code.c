@@ -7,7 +7,7 @@ int main() {
 
     bool z = x > y;
 
-    printf("%s\n", z ? "True" : "false"); 
+    printf("%s\n", z ? "True" : "False"); 
 
     return 0;
 }
