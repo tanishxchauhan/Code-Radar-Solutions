@@ -3,9 +3,9 @@
 
 int main() {
     long x;
-    scanf("%ld ", &x);
+    scanf("%li ", &x); 
 
-    bool z = !(x > 0) 
+    bool z = !(x > 0);
 
     printf("%s\n", z ? "True" : "False");
 
