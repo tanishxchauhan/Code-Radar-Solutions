@@ -6,6 +6,9 @@ int main(){
     if(diff>0){
         printf("Profit");
     }
+    else if(diff==0){
+        printf("No Profit No Loss");
+    }
     else{
         printf("Loss");
     }
