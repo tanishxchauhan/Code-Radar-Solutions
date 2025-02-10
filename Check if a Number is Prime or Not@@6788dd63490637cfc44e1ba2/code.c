@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(){
+int isprime(){
     int n;
     scanf("%d",&n);
     int prm=1;
@@ -16,5 +16,8 @@ int main(){
     else{
         printf("Prime");
     }
-return 0;
+}
+int main(){
+    isprime(1);
+    return 0;
 }
