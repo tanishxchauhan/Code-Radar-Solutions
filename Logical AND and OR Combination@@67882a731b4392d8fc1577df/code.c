@@ -7,7 +7,7 @@ int main() {
 
     bool result = (x > 0) && (y < 0) || (x == 0);
 
-    printf("%s\n", result ? "true" : "false"); // Ternary operator
+    printf("%s\n", result ? "True" : "False"); // Ternary operator
 
     return 0;
 }
