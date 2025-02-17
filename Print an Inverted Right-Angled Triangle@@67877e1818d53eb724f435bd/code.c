@@ -2,7 +2,7 @@
 int main(){
     int n,i,j;
     for(int i =1;i<n+1;i++){
-        printf("*\n")
+        printf("*\n");
     }
     return 0;
 }
