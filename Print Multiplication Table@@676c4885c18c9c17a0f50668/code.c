@@ -5,7 +5,7 @@ int main() {
     scanf("%d", &n);
 
     if (n == 1) {
-        printf("Table of 1:\n");
+        printf(1);
         for (int i = 1; i <= 10; ++i) {
             printf("1 x %d = %d\n", i, i);
         }
