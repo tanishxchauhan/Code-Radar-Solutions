@@ -23,7 +23,7 @@ int main(){
     if(x==7){
         printf("Sunday");
     }
-    else{
+    else if (x==8 || x==0){
         printf("Invalid");
     }
     
