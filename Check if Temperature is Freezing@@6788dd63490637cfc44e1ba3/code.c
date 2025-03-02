@@ -2,7 +2,7 @@
 int main(){
     long x;
     scanf("%ld ",&x);
-    if(x<0){
+    if(x<=0){
         printf("Freezing");
     }
     else{
