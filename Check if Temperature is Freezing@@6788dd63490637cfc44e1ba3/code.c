@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(){
     long x;
-    scanf("%ld ",&x,);
+    scanf("%ld ",&x);
     if(x<0){
         printf("Freezing");
     }
