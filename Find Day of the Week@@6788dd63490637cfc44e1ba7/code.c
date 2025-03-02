@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(){
     int x;
-    scanf("%ld ",&x);
+    scanf("%d ",&x);
     if(x==1){
         printf("Monday");
     }
