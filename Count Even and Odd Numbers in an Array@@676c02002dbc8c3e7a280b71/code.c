@@ -5,7 +5,7 @@ int main(){
     int count_even=0;
     scanf("%d\n",&n);
     int arr[n];
-    for(int i=0;i<n:i++){
+    for(int i=0;i<n;i++){
         scanf("%d",arr[i]);
     }
     for(int i =1;i<n;i++){
