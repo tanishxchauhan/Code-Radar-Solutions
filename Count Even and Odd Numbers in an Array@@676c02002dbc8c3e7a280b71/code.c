@@ -6,13 +6,13 @@ int main(){
     scanf("%d\n",&n);
     int arr[n];
     for(int i=0;i<n;i++){
-        scanf("%d",arr[i]);
+        scanf("%d",&arr[i]);
     }
-    for(int i =1;i<n;i++){
-        if(i%2==0){
+    for(int i =0;i<n;i++){
+        if(arr[i]%2==0){
             count_even++;
         }
-        if(i%2!=0){
+        else{
             count_odd++;
         }
 
