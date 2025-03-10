@@ -1,23 +1,30 @@
+#include <stdio.h>
+
+// Define the structure for Student
 struct Student {
-    char name[50];
     int rollNo;
+    char name[50];
     float marks;
 };
 
 int main() {
-    struct Student s;
+    int n;
 
-    printf("Enter Name: ");
-    scanf(" %s", s.name);
-    printf("Enter Roll Number: ");
-    scanf("%d", &s.rollNo);
-    printf("Enter Marks: ");
-    scanf("%f", &s.marks);
+    // Read the number of students
+    scanf("%d", &n);
 
-    printf("\n--- Student Details ---\n");
-    printf("Name: %s\n", s.name);
-    printf("Roll Number: %d\n", s.rollNo);
-    printf("Marks: %.2f\n", s.marks);
+    struct Student students[n];
+
+    // Input student details
+    for (int i = 0; i < n; i++) {
+        scanf("%d %s %f", &students[i].rollNo, students[i].name, &students[i].marks);
+    }
+
+    // Output student details in the required format
+    for (int i = 0; i < n; i++) {
+        printf("Roll Number: %d, Name: %s, Marks: %.2f\n", 
+               students[i].rollNo, students[i].name, students[i].marks);
+    }
 
     return 0;
 }
