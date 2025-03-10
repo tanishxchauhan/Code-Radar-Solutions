@@ -20,7 +20,7 @@ int main() {
     int Index = 0;
     for (int i = 1; i < n; i++) {
         if (students[i].marks > students[Index].marks) {
-            topIndex = i;
+            Index = i;
         }
     }
    
