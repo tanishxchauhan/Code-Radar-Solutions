@@ -18,7 +18,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         scanf("%d %s %f", &students[i].rollNumber, students[i].name, &students[i].marks);
     }
-    scanf("%.1f",&thr);
+    scanf("%f",&thr);
     for (int i = 0; i < n; i++){
         if(students[i].marks>thr){
             count++;
