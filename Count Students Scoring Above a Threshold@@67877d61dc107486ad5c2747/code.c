@@ -21,10 +21,10 @@ int main() {
     scanf("%.1f",&thr);
     for (int i = 0; i < n; i++){
         if(students[i].marks>thr){
-            count = count+1;
+            count++;
         }
     }
-    printf("Count of students scoring above 80.00: %d",count);
+    printf("Count of students scoring above %.2f: %d ",thr,count);
     return 0;
 
 
