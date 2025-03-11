@@ -4,10 +4,14 @@
 int main() {
     int x, y;
     scanf("%d %d", &x, &y);
+    if((x>0 && y<0) || (x==0 && y==0)){
+        printf("True");
+    }
+    else{
+        printf("False");
+    }
 
-    bool result = (x > 0) && (y < 0) || (x == 0);
 
-    printf("%s\n", result ? "True" : "False"); // Ternary operator
 
     return 0;
 }
