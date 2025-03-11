@@ -9,6 +9,8 @@ struct Student {
 int main() {
     int n;
     scanf("%d", &n);
+    int max = 0;
+    int a = 0;
 
     struct Student students[n];
 
@@ -16,14 +18,14 @@ int main() {
     for (int i = 0; i < n; i++) {
         scanf("%d %s %f", &students[i].rollNo, students[i].name, &students[i].marks);
     }
-      
-    int Index = 0;
-    for (int i = 1; i < n; i++) {
-        if (students[i].marks > students[Index].marks) {
-            Index = i;
+    for(int i=0;i<n;i++){
+        if(students[i].marks>max){
+            max=students[i].marks;
+            a=i;
         }
+
     }
-   
+    printf("Top Scorer: Roll Number: %d, Name: %s, Marks: %.2f\n",students[i].rollNo,students[i].name,students[i].marks);
 
 
     return 0;
