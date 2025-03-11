@@ -15,7 +15,7 @@ int main() {
         printf("%d", x * y);
     } else if (strcmp(op, "/") == 0) {
         if(y == 0){
-            printf("Division by zero is not allowed.");
+            printf("error");
         }else{
             printf("%d", x / y);
         }
