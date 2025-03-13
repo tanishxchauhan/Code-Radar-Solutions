@@ -2,6 +2,7 @@
 int main(){
     int n;
     scanf("%d\n",&n);
+    int new_array;
     int arr[n];
     for(int i=0;i<n;i++){
         scanf("%d\n",&arr[i]);
