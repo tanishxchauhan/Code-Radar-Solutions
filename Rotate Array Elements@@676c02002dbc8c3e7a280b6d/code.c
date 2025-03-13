@@ -1,14 +1,14 @@
 #include <stdio.h>
 int main(){
     int n;
-    scanf("%d\n",&n);
+    scanf("%d",&n);
     int new_array;
     int arr[n];
     for(int i=0;i<n;i++){
         scanf("%d\n",&arr[i]);
     }
     int k;
-    scanf("%d]\n",&k);
+    scanf("%d",&k);
     for(int i=0;i<n;i++){
         arr[i] = arr[i+k];
         new_array = arr[i+k];
