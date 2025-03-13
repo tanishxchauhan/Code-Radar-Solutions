@@ -11,7 +11,7 @@ int main(){
     scanf("%d]\n",&k);
     for(int i=0;i<n;i++){
         arr[i] = arr[i+k];
-        int new_array = arr[i+k];
+        new_array = arr[i+k];
     }
     printf("%d",new_array);
     return 0;
