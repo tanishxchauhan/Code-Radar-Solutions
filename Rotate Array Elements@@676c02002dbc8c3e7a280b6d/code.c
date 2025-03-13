@@ -2,17 +2,19 @@
 int main(){
     int n;
     scanf("%d",&n);
-    int new_array;
     int arr[n];
     for(int i=0;i<n;i++){
         scanf("%d",&arr[i]);
     }
     int k;
     scanf("%d",&k);
-    for(int i=0;i<n;i++){
-        arr[i] = arr[i+k];
-        new_array = arr[i+k];
+    k = k % n;
+    for (int i = k; i < n; i++) {
+        printf("%d ", arr[i]);
     }
-    printf("%d",new_array);
+    for (int i = 0; i < k; i++) {
+        printf("%d ", arr[i]);
+    }
+
     return 0;
 }
