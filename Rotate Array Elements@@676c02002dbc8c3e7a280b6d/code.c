@@ -16,12 +16,12 @@ int main() {
 
     k = k % n;  // Handle cases where k > n
 
-    // Print rotated array
+    // Print rotated array in the correct format (each element in a new line)
     for (int i = k; i < n; i++) {
-        printf("%d\n", arr[i]); // Print each element in a new line
+        printf("%d\n", arr[i]); 
     }
     for (int i = 0; i < k; i++) {
-        printf("%d\n", arr[i]); // Print each element in a new line
+        printf("%d\n", arr[i]); 
     }
 
     return 0;
