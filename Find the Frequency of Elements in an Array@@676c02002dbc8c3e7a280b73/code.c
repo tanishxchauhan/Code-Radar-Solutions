@@ -9,7 +9,7 @@ int main() {
         scanf("%d", &arr[i]);
     }
 
-    int freq[100] = {0}; 
+    int freq[1000] = {0}; 
 
     for (int i = 0; i < n; i++) {
         freq[arr[i]]++;
