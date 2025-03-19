@@ -5,7 +5,7 @@ int binarySearch(int arr[],int n,int target){
             return i;
         }
         else{
-           return -1
+           return -1;
         }
     }
 }
