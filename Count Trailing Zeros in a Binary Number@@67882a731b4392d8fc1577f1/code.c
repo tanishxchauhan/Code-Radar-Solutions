@@ -1,18 +1,19 @@
 #include <stdio.h>
 
 int main() {
-    unsigned int num;  // Use unsigned int for bitwise operations
+    unsigned int num;
     scanf("%u", &num);
 
     int count = 0;
-    unsigned int mask = 1 << 31; // Create a mask with MSB set
 
-    for (int i = 0; i < 32; i++) {
-        if (num & mask) { // Check if the current bit is set
-            break; // Stop counting if a '1' is encountered
-        }
+    if (num == 0) {
+        printf("32\n"); // All bits are trailing zeros
+        return 0;
+    }
+
+    while ((num & 1) == 0) {
         count++;
-        mask >>= 1; // Shift the mask to the right
+        num >>= 1;
     }
 
     printf("%d\n", count);
