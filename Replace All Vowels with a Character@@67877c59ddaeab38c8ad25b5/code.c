@@ -1,11 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-int isVowel(char c) {
-    c = tolower(c);
-    return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
-}
-
 int main() {
     char str[1000];
     char replaceChar;
@@ -15,9 +10,13 @@ int main() {
 
     str[strcspn(str, "\n")] = 0;
 
+    char vowels[] = "aeiouAEIOU";
     for (int i = 0; str[i] != '\0'; i++) {
-        if (isVowel(str[i])) {
-            str[i] = replaceChar;
+        for (int j = 0; vowels[j] != '\0'; j++) {
+            if (str[i] == vowels[j]) {
+                str[i] = replaceChar;
+                break; // No need to check other vowels
+            }
         }
     }
 
