@@ -1,46 +1,34 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 
-void reverseWords(char *str) {
-    int len = strlen(str);
-    int start = 0, end = len - 1;
-
-    // Reverse the entire string
-    while (start < end) {
-        char temp = str[start];
-        str[start] = str[end];
-        str[end] = temp;
-        start++;
-        end--;
-    }
-
-    // Reverse each word in the reversed string
-    start = 0;
-    for (int i = 0; i <= len; i++) {
-        if (str[i] == ' ' || str[i] == '\0') {
-            end = i - 1;
-            while (start < end) {
-                char temp = str[start];
-                str[start] = str[end];
-                str[end] = temp;
-                start++;
-                end--;
-            }
-            start = i + 1;
-        }
+void reverseWord(char *word) {
+    int len = strlen(word);
+    for (int i = 0; i < len / 2; i++) {
+        char temp = word[i];
+        word[i] = word[len - i - 1];
+        word[len - i - 1] = temp;
     }
 }
 
 int main() {
-    char str[100];
-    fgets(str, sizeof(str), stdin);
+    char input[1000];
+    fgets(input, sizeof(input), stdin);
 
-    // Remove the newline character if present
-    str[strcspn(str, "\n")] = 0;
+    // Remove trailing newline character if present
+    int len = strlen(input);
+    if (len > 0 && input[len - 1] == '\n') {
+        input[len - 1] = '\0';
+    }
 
-    reverseWords(str);
-    printf("%s\n", str);
-
+    char *token = strtok(input, " ");
+    while (token != NULL) {
+        reverseWord(token);
+        printf("%s", token);
+        token = strtok(NULL, " ");
+        if (token != NULL) {
+            printf(" ");
+        }
+    }
+    printf("\n");
     return 0;
 }
