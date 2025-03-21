@@ -13,7 +13,7 @@ bool isPrime(int num) {
     return true;
 }
 
-void printPrimeInRange(int a, int b) {
+void printPrimesInRange(int a, int b) {
     bool foundPrime = false;
     for (int i = a; i <= b; i++) {
         if (isPrime(i)) {
