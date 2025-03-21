@@ -10,15 +10,10 @@ int main() {
     bool isBinary = true;
     int len = strlen(str);
 
-    // If the string is empty, it's considered binary
-    if (len == 0) {
-        isBinary = true;
-    } else {
-        for (int i = 0; i < len; i++) {
-            if (str[i] != '0' && str[i] != '1') {
-                isBinary = false;
-                break;
-            }
+    for (int i = 0; i < len; i++) {
+        if (str[i] != '0' && str[i] != '1') {
+            isBinary = false;
+            break; 
         }
     }
 
