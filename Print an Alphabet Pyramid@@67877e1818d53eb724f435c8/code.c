@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 int main() {
-    char rows;
-    scanf("%c", &rows);
+    int rows;
+    scanf("%d", &rows);
 
-    for (int i = 1; i <= rows; i++) {
-        for (int j = 1; j <= rows - i + 1; j++) {
-            printf("%c ", 'A'+j);
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j <= i; j++) {
+            printf("%c", 'A' + j); // Print characters starting from 'A'
         }
         printf("\n");
     }
