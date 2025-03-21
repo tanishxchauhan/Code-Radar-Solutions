@@ -1,39 +1,47 @@
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
+#include <stdlib.h>
 
-void reverseWord(char *start, char *end) {
+void reverseWords(char *str) {
+    int len = strlen(str);
+    int start = 0, end = len - 1;
+
+    // Reverse the entire string
     while (start < end) {
-        char temp = *start;
-        *start = *end;
-        *end = temp;
+        char temp = str[start];
+        str[start] = str[end];
+        str[end] = temp;
         start++;
         end--;
+    }
+
+    // Reverse each word in the reversed string
+    start = 0;
+    for (int i = 0; i <= len; i++) {
+        if (str[i] == ' ' || str[i] == '\0') {
+            end = i - 1;
+            while (start < end) {
+                char temp = str[start];
+                str[start] = str[end];
+                str[end] = temp;
+                start++;
+                end--;
+            }
+            start = i + 1;
+        }
     }
 }
 
 int main() {
-    char str[1000];
+    char str[100];
+    printf("Enter a string: ");
     fgets(str, sizeof(str), stdin);
 
-    // Remove trailing newline
+    // Remove the newline character if present
     str[strcspn(str, "\n")] = 0;
 
-    char *wordStart = str;
-    char *wordEnd = str;
-
-    while (*wordEnd != '\0') {
-        if (isspace(*wordEnd)) {
-            reverseWord(wordStart, wordEnd - 1);
-            wordStart = wordEnd + 1;
-        }
-        wordEnd++;
-    }
-
-    // Reverse the last word
-    reverseWord(wordStart, wordEnd - 1);
-
-    printf("%s\n", str);
+    reverseWords(str);
+    printf("Output: %s\n", str);
 
     return 0;
 }
