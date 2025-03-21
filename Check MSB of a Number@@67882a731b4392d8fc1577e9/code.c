@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 int main() {
-    int num1;
-    scanf("%d", &num1);
+    int num;
+    scanf("%d", &num);
 
-    if (num1 > 0 && (num1 & (num1 - 1)) == 0) {
+    if (num < 0) {  // If the number is negative, MSB is 1 (set) in two's complement
         printf("Set\n");
     } else {
         printf("Not Set\n");
