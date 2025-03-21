@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int KthSmallest(int arr[], int n, int k) { // Corrected line: arr[] is now an array
+int kthSmallest(int arr[], int n, int k) { // Corrected line: arr[] is now an array
     if (k < 1 || k > n) {
         return -1; // K is out of range
     }
