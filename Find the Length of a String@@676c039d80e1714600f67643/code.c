@@ -7,11 +7,12 @@ int main() {
     int length = 0;
     while (str[length] != '\0' && str[length] != '\n') {
         length++;
+        if(str[i]==0){
+        printf(0);
+    }
 
     }
-    if(str[]=='0'){
-        printf('0');
-    }
+    
 
     printf("%d\n", length);
 
