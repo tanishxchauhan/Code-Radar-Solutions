@@ -19,7 +19,7 @@ void rotateArray(int arr[], int N, int K) {
     reverse(arr, 0, N - 1);
     // Reverse the first K elements
     reverse(arr, 0, K - 1);
-    // Reverse the remaining elements
+    // Reverse the remaining N-K elements
     reverse(arr, K, N - 1);
 }
 
@@ -35,11 +35,14 @@ int main() {
 
     rotateArray(arr, N, K);
 
-    // Print the rotated array
+    // Print the rotated array as space-separated values on a single line
     for (int i = 0; i < N; i++) {
-        printf("%d\n ", arr[i]);
+        printf("%d", arr[i]);
+        if (i != N - 1) {
+            printf(" ");  // Ensure correct formatting without trailing space
+        }
     }
-    
+    printf("\n");
 
     return 0;
 }
