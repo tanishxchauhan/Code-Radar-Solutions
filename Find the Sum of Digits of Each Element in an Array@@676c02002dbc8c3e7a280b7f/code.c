@@ -1,12 +1,16 @@
 #include <stdio.h>
+#include <stdlib.h> // For abs()
 
 // Function to calculate the sum of digits of a number
 int sumOfDigits(int num) {
     int sum = 0;
+    num = abs(num); // Ensure the number is positive
+
     while (num > 0) {
         sum += num % 10; // Extract last digit and add to sum
         num /= 10;       // Remove last digit
     }
+
     return sum;
 }
 
