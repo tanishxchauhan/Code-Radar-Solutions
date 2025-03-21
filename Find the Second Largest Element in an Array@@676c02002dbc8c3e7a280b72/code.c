@@ -1,11 +1,12 @@
 #include <stdio.h>
+#include <limits.h>  // Include for INT_MIN
 
 int findSecondLargest(int arr[], int n) {
     if (n < 2) return -1;  // If there are less than two elements, return -1.
 
-    int largest = arr[0], secondLargest = -1;
+    int largest = INT_MIN, secondLargest = INT_MIN;
 
-    for (int i = 1; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         if (arr[i] > largest) {
             secondLargest = largest;
             largest = arr[i];
@@ -14,7 +15,7 @@ int findSecondLargest(int arr[], int n) {
         }
     }
 
-    return secondLargest;
+    return (secondLargest == INT_MIN) ? -1 : secondLargest;
 }
 
 int main() {
