@@ -21,3 +21,4 @@ int findKthSmallest(int arr[], int n, int k) {
 
     return arr[k - 1]; // Return the k-th smallest element
 }
+
