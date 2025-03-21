@@ -1,27 +1,20 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdbool.h>
 
 int main() {
     char str[1000];
     fgets(str, sizeof(str), stdin);
     str[strcspn(str, "\n")] = 0;
 
-    bool isBinary = true;
-    int len = strlen(str);
-
-    for (int i = 0; i < len; i++) {
+    int i = 0;
+    while (str[i] != '\0') {
         if (str[i] != '0' && str[i] != '1') {
-            isBinary = false;
-            break; 
+            printf("No");
+            return 0;
         }
+        i++;
     }
 
-    if (isBinary) {
-        printf("Yes");
-    } else {
-        printf("No");
-    }
-
+    printf("Yes");
     return 0;
 }
