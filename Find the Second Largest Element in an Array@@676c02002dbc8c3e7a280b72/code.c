@@ -1,40 +1,33 @@
 #include <stdio.h>
-#include <stdlib.h>
+
+int findSecondLargest(int arr[], int n) {
+    if (n < 2) return -1;  // If there are less than two elements, return -1.
+
+    int largest = arr[0], secondLargest = -1;
+
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > largest) {
+            secondLargest = largest;
+            largest = arr[i];
+        } else if (arr[i] > secondLargest && arr[i] != largest) {
+            secondLargest = arr[i];
+        }
+    }
+
+    return secondLargest;
+}
 
 int main() {
     int n;
     scanf("%d", &n);
-    int *arr = (int *)malloc(n * sizeof(int));
-    if (arr == NULL) {
-        return 1; // Memory allocation failed
-    }
-
+    
+    int arr[n];
     for (int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
 
-    int *counted = (int *)calloc(n, sizeof(int)); // Track counted elements
-    if (counted == NULL) {
-        free(arr);
-        return 1; // Memory allocation failed
-    }
+    int result = findSecondLargest(arr, n);
+    printf("%d\n", result);
 
-    for (int i = 0; i < n; i++) {
-        if (counted[i] == 1) {
-            continue; // Skip already counted elements
-        }
-
-        int count = 1; // Start with 1 for the current element
-        for (int j = i + 1; j < n; j++) {
-            if (arr[i] == arr[j]) {
-                count++;
-                counted[j] = 1; // Mark as counted
-            }
-        }
-        printf("%d %d\n", arr[i], count);
-    }
-
-    free(arr);
-    free(counted);
     return 0;
 }
