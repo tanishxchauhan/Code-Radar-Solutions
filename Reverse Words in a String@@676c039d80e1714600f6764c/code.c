@@ -34,14 +34,13 @@ void reverseWords(char *str) {
 
 int main() {
     char str[100];
-    printf("Enter a string: ");
     fgets(str, sizeof(str), stdin);
 
     // Remove the newline character if present
     str[strcspn(str, "\n")] = 0;
 
     reverseWords(str);
-    printf("Output: %s\n", str);
+    printf("%s\n", str);
 
     return 0;
 }
