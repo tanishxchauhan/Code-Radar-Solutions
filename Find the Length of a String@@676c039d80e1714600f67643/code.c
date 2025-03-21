@@ -10,7 +10,7 @@ int main() {
 
     }
     if(str[]=='0'){
-        printf('0')
+        printf('0');
     }
 
     printf("%d\n", length);
