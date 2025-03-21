@@ -18,7 +18,7 @@ int main() {
     }
 
     for (int i = 0; i < orderCount; i++) {
-        printf("%c : %d\n", (char)order[i], count[order[i]]);
+        printf("%c: %d\n", (char)order[i], count[order[i]]);
     }
 
     return 0;
