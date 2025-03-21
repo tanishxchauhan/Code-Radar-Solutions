@@ -1,35 +1,24 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 void findUniquePairs(int arr[], int n, int target) {
-    // Sort the array to handle duplicates efficiently
-    qsort(arr, n, sizeof(int), (int (*)(const void *, const void *))cmpfunc);
+    // Iterate through each pair in the array
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i] + arr[j] == target) {
+                printf("%d %d\n", arr[i], arr[j]);
 
-    int left = 0, right = n - 1;
+                // Move `j` forward to skip duplicates
+                while (j + 1 < n && arr[j] == arr[j + 1]) {
+                    j++;
+                }
+            }
+        }
 
-    while (left < right) {
-        int sum = arr[left] + arr[right];
-
-        if (sum == target) {
-            printf("%d %d\n", arr[left], arr[right]);
-
-            // Skip duplicates
-            int tempLeft = arr[left], tempRight = arr[right];
-            while (left < right && arr[left] == tempLeft) left++;
-            while (left < right && arr[right] == tempRight) right--;
-        } 
-        else if (sum < target) {
-            left++;
-        } 
-        else {
-            right--;
+        // Move `i` forward to skip duplicates
+        while (i + 1 < n && arr[i] == arr[i + 1]) {
+            i++;
         }
     }
-}
-
-// Comparison function for qsort
-int cmpfunc(const void *a, const void *b) {
-    return (*(int *)a - *(int *)b);
 }
 
 int main() {
