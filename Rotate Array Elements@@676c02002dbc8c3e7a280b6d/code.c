@@ -35,14 +35,10 @@ int main() {
 
     rotateArray(arr, N, K);
 
-    // Print the rotated array as space-separated values on a single line
+    // Print each element on a new line
     for (int i = 0; i < N; i++) {
-        printf("%d", arr[i]);
-        if (i != N - 1) {
-            printf(" ");  // Ensure correct formatting without trailing space
-        }
+        printf("%d\n", arr[i]);
     }
-    printf("\n");
 
     return 0;
 }
