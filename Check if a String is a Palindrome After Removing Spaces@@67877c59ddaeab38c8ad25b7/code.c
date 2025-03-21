@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
+#include <ctype.h>
 
 bool isPalindrome(char *str) {
     int len = strlen(str);
@@ -19,9 +20,11 @@ int main() {
 
     char strNoSpaces[1000];
     int j = 0;
+
+    // Remove spaces and convert to lowercase
     for (int i = 0; str[i] != '\0'; i++) {
         if (str[i] != ' ') {
-            strNoSpaces[j++] = str[i];
+            strNoSpaces[j++] = tolower(str[i]); 
         }
     }
     strNoSpaces[j] = '\0';
