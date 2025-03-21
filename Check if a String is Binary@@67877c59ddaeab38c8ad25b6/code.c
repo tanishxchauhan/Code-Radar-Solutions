@@ -1,20 +1,24 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-    char str[1000];
-    fgets(str, sizeof(str), stdin);
-    str[strcspn(str, "\n")] = 0;
-
-    int i = 0;
-    while (str[i] != '\0') {
+int isBinary(char str[]) {
+    for (int i = 0; i < strlen(str); i++) {
         if (str[i] != '0' && str[i] != '1') {
-            printf("No");
-            return 0;
+            return 0;  // Not binary
         }
-        i++;
+    }
+    return 1;  // Binary
+}
+
+int main() {
+    char str[100];  // Assuming max length of 100
+    scanf("%s", str);
+
+    if (isBinary(str)) {
+        printf("Yes\n");
+    } else {
+        printf("No\n");
     }
 
-    printf("Yes");
     return 0;
 }
