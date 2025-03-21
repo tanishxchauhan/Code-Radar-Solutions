@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int searchRotatedArray(int arr, int n, int target) {
+int searchRotatedArray(int arr[], int n, int target) {
     int left = 0, right = n - 1;
 
     while (left <= right) {
@@ -10,16 +10,13 @@ int searchRotatedArray(int arr, int n, int target) {
             return mid;
         }
 
-        // Check if left half is sorted
-        if (arr[left] <= arr[mid]) {
+        if (arr[left] <= arr[mid]) { // Left half is sorted
             if (arr[left] <= target && target < arr[mid]) {
                 right = mid - 1;
             } else {
                 left = mid + 1;
             }
-        } 
-        // Right half is sorted
-        else {
+        } else { // Right half is sorted
             if (arr[mid] < target && target <= arr[right]) {
                 left = mid + 1;
             } else {
@@ -27,6 +24,6 @@ int searchRotatedArray(int arr, int n, int target) {
             }
         }
     }
-
     return -1; // Target not found
 }
+
