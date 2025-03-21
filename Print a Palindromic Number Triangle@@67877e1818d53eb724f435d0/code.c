@@ -5,12 +5,21 @@ int main() {
     scanf("%d", &rows);
 
     for (int i = 1; i <= rows; i++) {
-        for (int j = 1; j <= i; j++) {
-            printf("%d", j);
+        // Print spaces for indentation
+        for (int j = 1; j <= rows - i; j++) {
+            printf(" ");
         }
-        for (int k = i - 1; k >= 1; k--) {
+
+        // Print ascending numbers
+        for (int k = 1; k <= i; k++) {
             printf("%d", k);
         }
+
+        // Print descending numbers
+        for (int l = i - 1; l >= 1; l--) {
+            printf("%d", l);
+        }
+
         printf("\n");
     }
 
